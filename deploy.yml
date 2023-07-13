@@ -1,8 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dotnetdemo 
-  namespace: kubi
+  name: dotnetdemo
   labels:
     app: dotnetdemo
 spec:
@@ -17,10 +16,8 @@ spec:
     spec:
       containers:
       - name: dotnetdemo
-        image: service01.azurecr.io/dotnet-web
+        image: service01.azurecr.io/dotnetdemo:latest
         ports:
         - containerPort: 5000
-      imagePullSecret:
-        -name: kubin
-      
-   
+      imagePullSecrets:
+      - name: acrsecret
