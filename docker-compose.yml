@@ -34,4 +34,3 @@ services:
 # Names our volume
 volumes:
   my-db:
-
