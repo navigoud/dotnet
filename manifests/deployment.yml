@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: navigouddotnet 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: navigouddotnet
+  template:
+    metadata:
+      labels:
+        app: navigouddotnet 
+    spec:
+      containers:
+        - name: navigouddotnet 
+          image: navicontainer0010.azurecr.io/navigouddotnet
+          ports:
+          - containerPort: 5000
